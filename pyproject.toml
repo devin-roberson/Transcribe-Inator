@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "transcribe-inator"
+version = "0.1.0"
+description = "Detect the musical notes (e.g. piano chords) in a .wav file via frequency analysis."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.22", "scipy>=1.8"]
+
+[project.optional-dependencies]
+plot = ["matplotlib>=3.5"]
+dev = ["pytest>=7"]
+
+[project.scripts]
+transcribe-inator = "transcribe_inator.cli:main"
+
+[tool.setuptools]
+packages = ["transcribe_inator"]
